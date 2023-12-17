@@ -1,13 +1,17 @@
-#AWS Redshift Manager
+# AWS Redshift Manager
 
-###Dependencies
+### Dependencies
+```
 pip install pyyaml
 pip install redshift_connector
 pip install pandas
+```
 
-#AWS Athena Manager
+# AWS Athena Manager
 
-###Dependencies
+### Dependencies
+```
 pip install boto3
 pip install awswrangler
 pip install pyyaml
+```
