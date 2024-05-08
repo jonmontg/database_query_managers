@@ -4,7 +4,7 @@ import os
 from shared import ensure_configuration
 import awswrangler as wr
 
-def run_query(query_str, config_path="athena_config.yml"):
+def run_query(query_str, config_path="config/athena_config.yml"):
   config = ensure_configuration(config_path, "database", "output_location", "encryption", "region", "profile")
   if not config:
     print("Failed to validate configuration file.")
