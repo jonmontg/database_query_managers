@@ -1,7 +1,7 @@
 import boto3
 from botocore.exceptions import ClientError
 import os
-from shared import ensure_configuration
+from .shared import ensure_configuration
 import awswrangler as wr
 
 def run_query(query_str, config_path="config/athena_config.yml"):

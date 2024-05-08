@@ -1,7 +1,7 @@
 import redshift_connector
 import numpy as np
 import pandas as pd
-from shared import ensure_configuration
+from .shared import ensure_configuration
 import sys
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
