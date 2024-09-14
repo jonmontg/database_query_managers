@@ -11,7 +11,6 @@ def ensure_configuration(config, *keys):
   @return Dictionary representation of the config file if the file exists, is valid, and contains
   the required keys. None otherwise.
   """
-  print("parsing")
   if type(config) == str:
     if not os.path.exists(config):
       print(f"File {config} does not exist.")

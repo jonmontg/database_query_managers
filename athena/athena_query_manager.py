@@ -1,7 +1,6 @@
 import boto3
-from botocore.exceptions import ClientError
 import os
-from .shared import ensure_configuration
+from lib.shared import ensure_configuration
 import awswrangler as wr
 
 class AthenaQueryManager:

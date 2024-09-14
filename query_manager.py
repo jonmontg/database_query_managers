@@ -1,5 +1,5 @@
-from lib.athena_query_manager import AthenaQueryManager
-from lib.redshift_query_manager import RedshiftQueryManager
+from athena.athena_query_manager import AthenaQueryManager
+from redshift.redshift_query_manager import RedshiftQueryManager
 
 MANAGERS = {
   "redshift": RedshiftQueryManager,

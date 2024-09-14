@@ -1,2 +1,5 @@
-athena_config.yml
-redshift_config.yml
+config
+venv
+tmp
+.vscode
+__pycache__

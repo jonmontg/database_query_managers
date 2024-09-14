@@ -1,6 +1,6 @@
 import redshift_connector
 import pandas as pd
-from .shared import ensure_configuration
+from lib.shared import ensure_configuration
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_colwidth', None)
