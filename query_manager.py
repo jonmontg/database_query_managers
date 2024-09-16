@@ -34,7 +34,7 @@ class QueryManager:
   """
   def __init__(self, type, config):
     if type not in MANAGERS:
-      raise Exception(f"Unsupported database type: {type}. Supported types are {MANAGERS.keys.join(", ")}")
+      raise ValueError(f"Unsupported database type: {type}. Supported types are {', '.join(MANAGERS.keys())}")
     self.manager = MANAGERS[type](config)
 
   def run(self, query_str):
@@ -63,5 +63,5 @@ class QueryManager:
         self.manager.reset()
 
 if __name__=="__main__":
-  qm = QueryManager("athena", "config/athena_config.yml")
-  print(qm.run("select * from assays limit 1"))
+  qm = QueryManager("redshift", "config/redshift_config.yml")
+  print(qm.run("select * from millenniumhealth.flags limit 1"))
