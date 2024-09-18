@@ -1,14 +1,10 @@
 import boto3
 import os
-from lib.shared import ensure_configuration
 import awswrangler as wr
+from lib.query_manager import *
 
-class AthenaQueryManager:
-  def __init__(self, config):
-    self.config = ensure_configuration(config, "database", "output_location", "region", "profile")
-    if self.config is None:
-      raise Exception("Failed to parse configuration for AthenaQueryManager.")
-    self.reset()
+@configured_manager("database", "output_location", "region", "profile")
+class AthenaQueryManager(QueryManager):
 
   def reset(self):
     self.session = boto3.Session(profile_name=self.config["profile"], region_name=self.config["region"])
