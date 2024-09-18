@@ -1,12 +1,12 @@
 import redshift_connector
-import pandas as pd
 from .lib.query_manager import *
 
-@configured_manager("host", "database", "user", "password")
+@configured_manager("host", "database", "user", "password", "schema")
 class RedshiftQueryManager(QueryManager):
 
   def reset(self):
-    self.cursor = redshift_connector.connect(**self.config).cursor()
+    self.cursor = redshift_connector.connect(**{key: self.config[key] for key in ("host", "database", "user", "password")}).cursor()
+    self.run(f"SET search_path TO {self.config['schema']}")
 
   def run(self, query_str):
     """
@@ -15,6 +15,5 @@ class RedshiftQueryManager(QueryManager):
     """
     self.cursor.execute(query_str)
     if self.cursor.description is None:
-      print(self.cursor)
       return None
     return self.cursor.fetch_dataframe()
