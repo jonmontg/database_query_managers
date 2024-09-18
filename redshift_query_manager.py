@@ -1,6 +1,6 @@
 import redshift_connector
 import pandas as pd
-from lib.query_manager import *
+from .lib.query_manager import *
 
 @configured_manager("host", "database", "user", "password")
 class RedshiftQueryManager(QueryManager):

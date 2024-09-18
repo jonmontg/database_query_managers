@@ -1,5 +1,5 @@
 import pandas as pd
-from lib.ensure_configuration import ensure_configuration
+from .ensure_configuration import ensure_configuration
 
 def configured_manager(*configurations):
   def configuration(cls):

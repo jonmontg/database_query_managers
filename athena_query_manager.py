@@ -1,7 +1,7 @@
 import boto3
 import os
 import awswrangler as wr
-from lib.query_manager import *
+from .lib.query_manager import *
 
 @configured_manager("database", "output_location", "region", "profile")
 class AthenaQueryManager(QueryManager):
