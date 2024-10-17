@@ -8,7 +8,7 @@ class RedshiftQueryManager(QueryManager):
     self.cursor = redshift_connector.connect(**{key: self.config[key] for key in ("host", "database", "user", "password")}).cursor()
     self.run(f"SET search_path TO {self.config['schema']}")
 
-  def run(self, query_str):
+  def run(self, query_str: str):
     """
     Returns a pandas dataframe of the results from running the query string. If the query fails,
     return None
